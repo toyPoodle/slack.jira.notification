@@ -1,0 +1,9 @@
+# Add the port your service shall run on in here.
+service:
+  port: 
+
+# Set logging levels by package names
+logging:
+  level:
+    de: DEBUG
+  

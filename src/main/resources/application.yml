@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: slack.jira.notification
+  jackson:
+    serialization: 
+      INDENT_OUTPUT: true
+
+server:
+  port: ${service.port}
+
+logging:
+  file: logs/slack.jira.notification.log
+
+management:
+  context-path: /-system
+
+endpoints:
+    health:
+      sensitive: false
+    info:
+      sensitive: false
+    
+info:
+    build:
+        artifact: "@project.artifactId@"
+        name: "@project.name@"
+        description: "@project.description@"
+        version: "@project.version@"
