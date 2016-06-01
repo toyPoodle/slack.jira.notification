@@ -13,4 +13,4 @@ where
   jira.url.prefix is the JIRA instance you use for your issue tracking
   service.port is the port this service is listening
   
-In JIRA you need to change your slack notification URL from https://hooks.slack.com/services/AAAAAAAAA/BBBBBBBBB/CCCCCCCCCCCCCCCC to https://serviceDomain:port/services/AAAAAAAAA/BBBBBBBBB/CCCCCCCCCCCCCCCC
+In JIRA you need to change your slack notification URL from https://hooks.slack.com/services/AAAAAAAAA/BBBBBBBBB/CCCCCCCCCCCCCCCC to https://serviceDomain:port/v0/jira-web-hook/notification/AAAAAAAAA/BBBBBBBBB/CCCCCCCCCCCCCCCC
