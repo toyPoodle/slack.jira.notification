@@ -32,7 +32,6 @@ public class JiraWebHookImpl {
     private static final Logger log = LoggerFactory.getLogger(JiraWebHookImpl.class);
     private final RestTemplate restTemplate = new RestTemplate();
     
-    @Value("#{systemProperties['jira.url.prefix']}")
     private String jiraUrlPrefix;
 
     @POST
@@ -106,5 +105,11 @@ public class JiraWebHookImpl {
     private String formatDate(Long timestamp) {
         return LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneOffset.UTC)
                             .format(DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm"));
+    }
+
+    @Value("#{systemProperties['jira.url.prefix']}")
+    public void setJiraUrlPrefix(String jiraUrlPrefix) {
+        log.info("jiraUrlPrefix: '" + jiraUrlPrefix + "'");
+        this.jiraUrlPrefix = jiraUrlPrefix;
     }
 }
