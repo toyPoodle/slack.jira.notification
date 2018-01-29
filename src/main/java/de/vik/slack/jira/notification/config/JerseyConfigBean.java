@@ -1,8 +1,7 @@
 package de.vik.slack.jira.notification.config;
 
-import de.vik.slack.jira.notification.view.rs.filter.DebugLoggingFilter;
-import de.vik.slack.jira.notification.view.rs.impl.DebugImpl;
 import de.vik.slack.jira.notification.view.rs.impl.JiraWebHookImpl;
+import org.glassfish.jersey.logging.LoggingFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,7 +15,6 @@ public class JerseyConfigBean extends ResourceConfig {
     
     public JerseyConfigBean() {
         register(JiraWebHookImpl.class);
-        register(DebugImpl.class);
-        register(new DebugLoggingFilter());
+        register(LoggingFeature.class);
     }
 }

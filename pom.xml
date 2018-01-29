@@ -15,15 +15,12 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!-- Java source and target -->
-        <maven.compiler.source>1.8</maven.compiler.source>
+		<!-- Java source and target -->
+		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<java.version>${maven.compiler.target}</java.version>
-		<spring.boot.version>1.2.7.RELEASE</spring.boot.version>
-		<spring.cloud.version>Angel.SR3</spring.cloud.version>
-		<swagger.version>1.5.0</swagger.version>
-		<metrics.spring.version>3.1.0</metrics.spring.version>
-		<restassured.version>2.4.1</restassured.version>
+		<spring.boot.version>1.5.8.RELEASE</spring.boot.version>
+		<spring.cloud.version>Dalston.SR4</spring.cloud.version>
 	</properties>
 	
 	<scm>
@@ -31,7 +28,7 @@
 	  <tag>HEAD</tag>
   </scm>
 
-    <dependencyManagement>
+	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -50,7 +47,7 @@
 		</dependencies>
 	</dependencyManagement>
 
-    <dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -63,6 +60,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jersey</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -72,13 +78,13 @@
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
 					<version>${spring.boot.version}</version>
-	                <executions>
-	                    <execution>
-	                        <goals>
-	                            <goal>repackage</goal>
-	                        </goals>
-	                    </execution>
-	                </executions>
+					<executions>
+						<execution>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>
