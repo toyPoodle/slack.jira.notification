@@ -2,8 +2,22 @@
 service:
   port: 
 
-# Set logging levels by package names
+# Set logging levels by package names.
 logging:
   level:
     de: DEBUG
-  
+
+jira:
+  url:
+    # Override pattern for URLs you want to generate.
+    pattern: "https://#{'$'}{host}/browse/"
+  host:
+    # Enter here the default host.
+    # Default host is used if no or invalid targetHost parameter is specified in the URL.
+    default: "jira.example.com"
+    alternative:
+      # Only this hosts are allowed to be used as value of 
+      # targetHost parameter to avoid proxying to any other server.
+      whitelist:
+        - "jira2.example.com"
+        - "jira3.example.com"

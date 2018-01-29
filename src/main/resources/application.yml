@@ -7,6 +7,9 @@ spring:
 
 server:
   port: ${service.port}
+  
+slack:
+  url: https://hooks.slack.com/services/{id1}/{id2}/{id3}
 
 logging:
   file: logs/slack.jira.notification.log
