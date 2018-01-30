@@ -4,7 +4,7 @@
 
 	<groupId>de.vik</groupId>
 	<artifactId>slack.jira.notification</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>slack.jira.notification</name>
@@ -28,7 +28,7 @@
 	
 	<scm>
 		<connection>scm:git:https://github.com/toyPoodle/slack.jira.notification.git</connection>
-	  <tag>1.0.0</tag>
+	  <tag>HEAD</tag>
   </scm>
 
     <dependencyManagement>
